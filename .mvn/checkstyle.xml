@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN" "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: Multiselect Parameters
+    Description: none
+-->
+<module name="Checker">
+  <property name="severity" value="error"/>
+  <module name="SuppressWarningsFilter"/>
+  <property name="localeLanguage" value="en"/>
+  <module name="TreeWalker">
+    <module name="SuppressWarningsHolder"/>
+    <module name="OperatorWrap">
+      <property name="severity" value="ignore"/>
+      <property name="option" value="eol"/>
+      <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+    </module>
+    <module name="NeedBraces"/>
+    <module name="LeftCurly"/>
+    <module name="RightCurly"/>
+    <module name="InterfaceIsType"/>
+    <module name="JavadocMethod"/>
+    <module name="AvoidNestedBlocks"/>
+    <module name="EmptyCatchBlock">
+      <property name="exceptionVariableName" value="expected|ignore"/>
+    </module>
+    <module name="JavadocVariable"/>
+    <module name="VisibilityModifier">
+      <property name="protectedAllowed" value="true"/>
+    </module>
+    <module name="EqualsHashCode"/>
+    <module name="IllegalInstantiation">
+      <property name="classes" value="java.lang.Boolean, java.lang.String"/>
+    </module>
+    <module name="AvoidStarImport"/>
+    <module name="UnusedImports"/>
+    <module name="IllegalImport"/>
+    <module name="HideUtilityClassConstructor"/>
+    <module name="FallThrough"/>
+    <module name="MissingSwitchDefault"/>
+    <module name="ConstantName">
+      <property name="severity" value="warning"/>
+    </module>
+    <module name="HiddenField">
+      <property name="ignoreConstructorParameter" value="true"/>
+      <property name="ignoreSetter" value="true"/>
+    </module>
+    <module name="Regexp">
+      <property name="format" value="[ \t]+$"/>
+      <property name="message" value="Trailing whitespace"/>
+      <property name="illegalPattern" value="true"/>
+    </module>
+    <module name="Regexp">
+      <property name="format" value="System\.out\.println"/>
+      <property name="illegalPattern" value="true"/>
+    </module>
+    <module name="RedundantModifier"/>
+    <module name="ModifierOrder"/>
+    <module name="DeclarationOrder"/>
+    <module name="UnnecessaryParentheses"/>
+    <module name="StringLiteralEquality"/>
+    <module name="MultipleVariableDeclarations"/>
+    <module name="MultipleStringLiterals">
+      <property name="ignoreStringsRegexp" value="^((&quot;&quot;)|(&quot;.&quot;)|(&quot;unchecked&quot;))$"/>
+    </module>
+    <module name="AnnotationLocation">
+      <property name="allowSamelineSingleParameterlessAnnotation" value="false"/>
+    </module>
+    <module name="Indentation"/>
+    <module name="MissingJavadocMethod">
+      <property name="scope" value="public"/>
+    </module>
+  </module>
+  <module name="FileTabCharacter"/>
+  <module name="NewlineAtEndOfFile"/>
+  <module name="JavadocPackage"/>
+<!--  <module name="SuppressionFilter">-->
+<!--    <property name="file" value=".mvn/checkstyle-suppressions.xml"/>-->
+<!--  </module>-->
+  <module name="BeforeExecutionExclusionFileFilter">
+    <property name="fileNamePattern" value=".*Test\.java"/>
+  </module>
+  <module name="BeforeExecutionExclusionFileFilter">
+    <property name="fileNamePattern" value="\.DS_Store"/>
+  </module>
+  <module name="BeforeExecutionExclusionFileFilter">
+    <property name="fileNamePattern" value="Messages.java"/>
+  </module>
+</module>
