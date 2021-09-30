@@ -60,6 +60,11 @@ class ArtifactTest {
         Assertions.assertNotEquals(new Artifact("de.westemeyer", null, "1.0.0-SNAPSHOT", 1632345803686L, "Artifact version service definition"), artifact);
         Assertions.assertNotEquals(new Artifact("de.westemeyer", "artifact-version-service", null, 1632345803686L, "Artifact version service definition"), artifact);
         Assertions.assertNotEquals(new Artifact("de.westemeyer", "artifact-version-service", "1.0.0-SNAPSHOT", 1632345803686L, null), artifact);
+
+        Assertions.assertEquals(new Artifact(null, "artifact-version-service", "1.0.0-SNAPSHOT", 1632345803686L, "Artifact version service definition"), new Artifact(null, "artifact-version-service", "1.0.0-SNAPSHOT", 1632345803686L, "Artifact version service definition"));
+        Assertions.assertEquals(new Artifact("de.westemeyer", null, "1.0.0-SNAPSHOT", 1632345803686L, "Artifact version service definition"), new Artifact("de.westemeyer", null, "1.0.0-SNAPSHOT", 1632345803686L, "Artifact version service definition"));
+        Assertions.assertEquals(new Artifact("de.westemeyer", "artifact-version-service", null, 1632345803686L, "Artifact version service definition"), new Artifact("de.westemeyer", "artifact-version-service", null, 1632345803686L, "Artifact version service definition"));
+        Assertions.assertEquals(new Artifact("de.westemeyer", "artifact-version-service", "1.0.0-SNAPSHOT", 1632345803686L, null), new Artifact("de.westemeyer", "artifact-version-service", "1.0.0-SNAPSHOT", 1632345803686L, null));
     }
 
     @Test

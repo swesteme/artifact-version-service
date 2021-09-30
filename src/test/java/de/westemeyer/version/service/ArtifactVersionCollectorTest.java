@@ -1,6 +1,7 @@
 package de.westemeyer.version.service;
 
 import de.westemeyer.version.model.Artifact;
+import de.westemeyer.version.model.DefaultArtifactComparator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +19,15 @@ class ArtifactVersionCollectorTest {
         Assertions.assertEquals("loadedArtifact", artifact.getArtifactId());
         Assertions.assertEquals("loadedVersion", artifact.getVersion());
         Assertions.assertNull(artifact.getName());
+
+        artifacts = new ArtifactVersionCollector(Comparator.comparing(Artifact::getVersion)).collect();
+        list = new ArrayList<>(artifacts);
+        Assertions.assertEquals(2, list.size());
+        artifact = list.get(0);
+        Assertions.assertEquals("de.westemeyer", artifact.getGroupId());
+        Assertions.assertEquals("artifact-version-service", artifact.getArtifactId());
+        Assertions.assertEquals("1.0.0-SNAPSHOT", artifact.getVersion());
+        Assertions.assertEquals("Artifact version service definition", artifact.getName());
     }
 
     @Test
@@ -37,5 +47,15 @@ class ArtifactVersionCollectorTest {
         Assertions.assertEquals(0, ArtifactVersionCollector.findArtifactsByGroupId(null, true).size());
         Assertions.assertEquals(1, ArtifactVersionCollector.findArtifactsByGroupId("de.westemeyer", false).size());
         Assertions.assertEquals(1, ArtifactVersionCollector.findArtifactsByGroupId("de.westemeyer", true).size());
+
+        Assertions.assertEquals(2, new ArtifactVersionCollector(Comparator.comparing(Artifact::getVersion)).artifactsByGroupId("de.", false).size());
+    }
+
+    @Test
+    void printVersions() {
+        ArtifactVersionCollector.iterateArtifacts(a -> {
+            System.out.println(a);
+            return false;
+        });
     }
 }
