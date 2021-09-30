@@ -26,7 +26,7 @@ class ArtifactVersionCollectorTest {
         artifact = list.get(0);
         Assertions.assertEquals("de.westemeyer", artifact.getGroupId());
         Assertions.assertEquals("artifact-version-service", artifact.getArtifactId());
-        Assertions.assertEquals("1.0.0", artifact.getVersion());
+        Assertions.assertEquals("1.0.1", artifact.getVersion());
         Assertions.assertEquals("Artifact version service definition", artifact.getName());
     }
 

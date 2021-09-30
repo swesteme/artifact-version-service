@@ -6,7 +6,7 @@
 
     <groupId>de.westemeyer</groupId>
     <artifactId>artifact-version-service</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>Artifact version service definition</name>
 
     <description>The artifact-version-service is used to collect artifact versions in the classpath.</description>
@@ -115,7 +115,7 @@
             <plugin>
                 <groupId>de.westemeyer</groupId>
                 <artifactId>artifact-version-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -232,6 +232,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.8.0</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.auto.service</groupId>

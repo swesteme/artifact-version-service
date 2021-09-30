@@ -68,7 +68,7 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
     <plugin>
       <groupId>de.westemeyer</groupId>
       <artifactId>artifact-version-maven-plugin</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <executions>
         <execution>
           <goals>
@@ -84,7 +84,7 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
   <dependency>
     <groupId>de.westemeyer</groupId>
     <artifactId>artifact-version-service</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
   </dependency>
 </dependencies>
 ```
@@ -96,7 +96,7 @@ It is also possible to configure the generator to use target directories and a m
     <plugin>
       <groupId>de.westemeyer</groupId>
       <artifactId>artifact-version-maven-plugin</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
       <executions>
         <execution>
           <goals>
@@ -105,7 +105,7 @@ It is also possible to configure the generator to use target directories and a m
         </execution>
       </executions>
       <configuration>
-        <packageName>my.package.for.generated.service.class</packageName>
+        <packageName>my.generated.service</packageName>
         <serviceClass>MyGeneratedServiceClass</serviceClass>
         <targetFolder>target/generated-sources</targetFolder>
       </configuration>
