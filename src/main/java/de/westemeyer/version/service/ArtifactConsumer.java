@@ -9,7 +9,7 @@ import java.util.Set;
  * specific artifact.
  */
 @FunctionalInterface
-interface ArtifactConsumer {
+public interface ArtifactConsumer {
     /**
      * Inspect the artifact content and use it (e.g. to put it in a {@link Set <Artifact>}) or return true when an artifact
      * has been identified to get it returned immediately.

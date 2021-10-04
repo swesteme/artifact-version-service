@@ -84,7 +84,7 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
   <dependency>
     <groupId>de.westemeyer</groupId>
     <artifactId>artifact-version-service</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
   </dependency>
 </dependencies>
 ```

@@ -6,7 +6,7 @@
 
     <groupId>de.westemeyer</groupId>
     <artifactId>artifact-version-service</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>Artifact version service definition</name>
 
     <description>The artifact-version-service is used to collect artifact versions in the classpath.</description>
