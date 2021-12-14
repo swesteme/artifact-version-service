@@ -29,8 +29,8 @@ class ArtifactTest {
 
     @Test
     void toStringTest() {
-        Artifact artifact = new Artifact("de.westemeyer", "artifact-version-service", "1.0.0-SNAPSHOT", 1632345803686L, "Artifact version service definition");
-        Assertions.assertEquals("Artifact(groupId=de.westemeyer, artifactId=artifact-version-service, version=1.0.0-SNAPSHOT, timestamp=1632345803686, name=Artifact version service definition)", artifact.toString());
+        Artifact artifact = new Artifact("de.westemeyer", "artifact-version-service", "1.0.0-SNAPSHOT", 1632345803686L, "Artifact version service definition", "Artifact description", "https://github.com");
+        Assertions.assertEquals("Artifact(groupId=de.westemeyer, artifactId=artifact-version-service, version=1.0.0-SNAPSHOT, timestamp=1632345803686, name=Artifact version service definition, description=Artifact description, url=https://github.com)", artifact.toString());
     }
 
     @Test
