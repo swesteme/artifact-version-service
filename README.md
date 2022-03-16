@@ -1,4 +1,4 @@
-# Artifact version service maven generator plugin
+# Artifact version service
 
 ![Build Status Linux](https://github.com/swesteme/artifact-version-service/workflows/Java%20CI%20with%20Maven/badge.svg?branch=main) [![codecov](https://codecov.io/gh/swesteme/artifact-version-service/branch/main/graph/badge.svg?token=QTB0PSUS2X)](https://codecov.io/gh/swesteme/artifact-version-service)
 
@@ -68,7 +68,7 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
     <plugin>
       <groupId>de.westemeyer</groupId>
       <artifactId>artifact-version-maven-plugin</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.1</version>
       <executions>
         <execution>
           <goals>
@@ -96,7 +96,7 @@ It is also possible to configure the generator to use target directories and a m
     <plugin>
       <groupId>de.westemeyer</groupId>
       <artifactId>artifact-version-maven-plugin</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.1</version>
       <executions>
         <execution>
           <goals>
