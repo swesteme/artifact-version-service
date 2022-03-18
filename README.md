@@ -77,6 +77,26 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
         </execution>
       </executions>
     </plugin>
+    <plugin>
+      <!-- Add source folder to Eclipse configuration. IntelliJ will recognize extra source automatically. -->
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <version>3.0.0</version>
+      <executions>
+          <execution>
+              <id>add-source</id>
+              <phase>generate-sources</phase>
+              <goals>
+                  <goal>add-source</goal>
+              </goals>
+              <configuration>
+                  <sources>
+                      <source>${project.build.directory}/generated-sources/artifact-versions</source>
+                  </sources>
+              </configuration>
+          </execution>
+      </executions>
+    </plugin>
   </plugins>
 </build>
 
@@ -109,6 +129,26 @@ It is also possible to configure the generator to use target directories and a m
         <serviceClass>MyGeneratedServiceClass</serviceClass>
         <targetFolder>target/generated-sources</targetFolder>
       </configuration>
+    </plugin>
+    <plugin>
+      <!-- Add source folder to Eclipse configuration. IntelliJ will recognize extra source automatically. -->
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>build-helper-maven-plugin</artifactId>
+      <version>3.0.0</version>
+      <executions>
+          <execution>
+              <id>add-source</id>
+              <phase>generate-sources</phase>
+              <goals>
+                  <goal>add-source</goal>
+              </goals>
+              <configuration>
+                  <sources>
+                      <source>target/generated-sources</source>
+                  </sources>
+              </configuration>
+          </execution>
+      </executions>
     </plugin>
   </plugins>
 </build>
