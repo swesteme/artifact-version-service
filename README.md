@@ -1,6 +1,8 @@
 # Artifact version service
 
-![Build Status Linux](https://github.com/swesteme/artifact-version-service/workflows/Java%20CI%20with%20Maven/badge.svg?branch=main) [![codecov](https://codecov.io/gh/swesteme/artifact-version-service/branch/main/graph/badge.svg?token=QTB0PSUS2X)](https://codecov.io/gh/swesteme/artifact-version-service)
+![Build Status Linux](https://github.com/swesteme/artifact-version-service/actions/workflows/ci.yml/badge.svg)
+[![GitHub release](https://img.shields.io/github/release/swesteme/artifact-version-service.svg?label=changelog)](https://github.com/swesteme/artifact-version-service/releases/latest)
+[![codecov](https://codecov.io/gh/swesteme/artifact-version-service/branch/main/graph/badge.svg?token=QTB0PSUS2X)](https://codecov.io/gh/swesteme/artifact-version-service)
 
 The artifact-version-service is used to find artifact versions on the classpath. It uses Javas own classloader mechanism. All "participating" jar files can contribute their own version by supplying their own implementation of the `ArtifactVersionService`.
 
@@ -104,7 +106,7 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
   <dependency>
     <groupId>de.westemeyer</groupId>
     <artifactId>artifact-version-service</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
   </dependency>
 </dependencies>
 ```
