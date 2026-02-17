@@ -180,17 +180,4 @@
         </dependency>
     </dependencies>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <scm>
-        <connection>scm:git:git://github.com/swesteme/artifact-version-service.git</connection>
-        <developerConnection>scm:git:ssh://github.com:swesteme/artifact-version-service.git</developerConnection>
-        <url>http://github.com/swesteme/artifact-version-service/tree/main</url>
-    </scm>
-
 </project>
