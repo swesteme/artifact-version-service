@@ -90,7 +90,7 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
     <plugin>
       <groupId>de.westemeyer</groupId>
       <artifactId>artifact-version-maven-plugin</artifactId>
-      <version>2.0.1</version>
+      <version>2.1.0</version>
       <executions>
         <execution>
           <goals>
@@ -126,7 +126,7 @@ It is used in combination with the [artifact-version-maven-plugin](https://githu
   <dependency>
     <groupId>de.westemeyer</groupId>
     <artifactId>artifact-version-service-spring-boot</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
   </dependency>
 </dependencies>
 ```
@@ -138,7 +138,7 @@ It is also possible to configure the generator to use target directories and a m
     <plugin>
       <groupId>de.westemeyer</groupId>
       <artifactId>artifact-version-maven-plugin</artifactId>
-      <version>2.0.1</version>
+      <version>2.1.0</version>
       <executions>
         <execution>
           <goals>

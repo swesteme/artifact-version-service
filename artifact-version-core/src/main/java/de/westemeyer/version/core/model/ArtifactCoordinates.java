@@ -1,6 +1,6 @@
 package de.westemeyer.version.core.model;
 
-import lombok.NonNull;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Simple interface used for artifact coordinates.
@@ -12,7 +12,6 @@ public interface ArtifactCoordinates {
      *
      * @return the groupId property of the artifact.
      */
-    @NonNull
     String groupId();
 
     /**
@@ -20,7 +19,6 @@ public interface ArtifactCoordinates {
      *
      * @return the artifactId property of the artifact.
      */
-    @NonNull
     String artifactId();
 
     /**
@@ -28,7 +26,6 @@ public interface ArtifactCoordinates {
      *
      * @return the version property of the artifact.
      */
-    @NonNull
     String version();
 
     /**
@@ -36,5 +33,6 @@ public interface ArtifactCoordinates {
      *
      * @return the (optional) parent artifact.
      */
+    @Nullable
     ArtifactCoordinates parentArtifact();
 }

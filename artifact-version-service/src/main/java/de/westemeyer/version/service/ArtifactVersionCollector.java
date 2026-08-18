@@ -3,6 +3,7 @@ package de.westemeyer.version.service;
 import de.westemeyer.version.core.api.ArtifactVersionService;
 import de.westemeyer.version.core.collector.AbstractArtifactVersionCollector;
 import de.westemeyer.version.core.model.Artifact;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ServiceLoader;
 import java.util.Set;
@@ -29,7 +30,7 @@ public class ArtifactVersionCollector extends AbstractArtifactVersionCollector {
      * @param artifactId the artifact id
      * @return the artifact identified by its coordinates or {@code null} in case it is not found
      */
-    public static Artifact findArtifact(String groupId, String artifactId) {
+    public static @Nullable Artifact findArtifact(@Nullable String groupId, @Nullable String artifactId) {
         return new ArtifactVersionCollector().artifactsByGroupIdAndArtifactId(groupId, artifactId);
     }
 
@@ -40,7 +41,7 @@ public class ArtifactVersionCollector extends AbstractArtifactVersionCollector {
      * @param exact   {@code true} to check for exact groupId, {@code false} to use {@code groupId} as a prefix
      * @return a set of artifacts matching the criteria
      */
-    public static Set<Artifact> findArtifactsByGroupId(String groupId, boolean exact) {
+    public static Set<Artifact> findArtifactsByGroupId(@Nullable String groupId, boolean exact) {
         return new ArtifactVersionCollector().artifactsByGroupId(groupId, exact);
     }
 
