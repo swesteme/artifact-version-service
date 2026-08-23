@@ -4,6 +4,7 @@ import de.westemeyer.version.core.api.ArtifactConsumer;
 import de.westemeyer.version.core.api.ArtifactVersionService;
 import de.westemeyer.version.core.model.Artifact;
 import de.westemeyer.version.core.model.DefaultArtifactComparator;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Comparator;
 import java.util.Set;
@@ -55,9 +56,10 @@ public abstract class AbstractArtifactVersionCollector {
      * @param artifactId the artifact id
      * @return the artifact identified by its coordinates or {@code null} in case it is not found
      */
-    public Artifact artifactsByGroupIdAndArtifactId(String groupId, String artifactId) {
+    public @Nullable Artifact artifactsByGroupIdAndArtifactId(@Nullable String groupId, @Nullable String artifactId) {
         return iterateArtifacts(artifact ->
-                groupId != null && groupId.equals(artifact.groupId()) && artifactId != null && artifactId.equals(artifact.artifactId())
+                groupId != null && groupId.equals(artifact.groupId()) && artifactId != null && artifactId.equals(
+                        artifact.artifactId())
         );
     }
 
@@ -68,7 +70,7 @@ public abstract class AbstractArtifactVersionCollector {
      * @param exact   {@code true} to check for exact groupId, {@code false} to use {@code groupId} as a prefix
      * @return a set of artifacts matching the criteria
      */
-    public Set<Artifact> artifactsByGroupId(String groupId, boolean exact) {
+    public Set<Artifact> artifactsByGroupId(@Nullable String groupId, boolean exact) {
         return artifactsByGroupId(groupId, exact, new DefaultArtifactComparator());
     }
 
@@ -80,7 +82,8 @@ public abstract class AbstractArtifactVersionCollector {
      * @param sortingComparator comparator used for order in return value
      * @return a set of artifacts matching the criteria
      */
-    public Set<Artifact> artifactsByGroupId(String groupId, boolean exact, Comparator<Artifact> sortingComparator) {
+    public Set<Artifact> artifactsByGroupId(@Nullable String groupId, boolean exact,
+                                            Comparator<Artifact> sortingComparator) {
         // create a new sorted result set
         Set<Artifact> artifacts = new TreeSet<>(sortingComparator);
 
@@ -90,7 +93,8 @@ public abstract class AbstractArtifactVersionCollector {
             String artifactGroupId = artifact.groupId();
 
             // check condition to add artifact to set
-            if (groupId == null && !exact || exact && artifactGroupId.equals(groupId) || !exact && artifactGroupId.startsWith(groupId)) {
+            if (groupId == null && !exact || exact && artifactGroupId.equals(
+                    groupId) || !exact && artifactGroupId.startsWith(groupId)) {
                 // add artifact
                 artifacts.add(artifact);
             }
@@ -110,7 +114,7 @@ public abstract class AbstractArtifactVersionCollector {
      * @param consumer the artifact consumer (see {@link ArtifactConsumer} for details
      * @return an artifact or {@code null}
      */
-    public Artifact iterateArtifacts(ArtifactConsumer consumer) {
+    public @Nullable Artifact iterateArtifacts(ArtifactConsumer consumer) {
         // iterate all published service classes
         for (ArtifactVersionService versionService : getArtifactVersionServices()) {
             // get artifact from service

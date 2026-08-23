@@ -1,7 +1,7 @@
 package de.westemeyer.version.core.model;
 
 import lombok.EqualsAndHashCode;
-import lombok.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,10 +19,10 @@ import java.util.TimeZone;
  * @param url            The (optional) url property of the artifact.
  * @param parentArtifact The (optional) parent artifact.
  */
-public record Artifact(@NonNull String groupId, @NonNull String artifactId, @NonNull String version, long timestamp,
-                       String name, @EqualsAndHashCode.Exclude String description,
-                       @EqualsAndHashCode.Exclude String url,
-                       ArtifactCoordinates parentArtifact) implements ArtifactCoordinates {
+public record Artifact(String groupId, String artifactId, String version, long timestamp,
+                       @Nullable String name, @Nullable @EqualsAndHashCode.Exclude String description,
+                       @Nullable @EqualsAndHashCode.Exclude String url,
+                       @Nullable ArtifactCoordinates parentArtifact) implements ArtifactCoordinates {
     /**
      * Compatibility constructor for service objects that are generated with an initial version of the artifact version
      * service.
@@ -33,7 +33,8 @@ public record Artifact(@NonNull String groupId, @NonNull String artifactId, @Non
      * @param timestamp  timestamp of build
      * @param name       the (optional) artifact name
      */
-    public Artifact(@NonNull String groupId, @NonNull String artifactId, @NonNull String version, long timestamp, String name) {
+    public Artifact(String groupId, String artifactId, String version, long timestamp,
+                    @Nullable String name) {
         this(groupId, artifactId, version, timestamp, name, null, null, null);
     }
 
