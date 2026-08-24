@@ -1,4 +1,4 @@
-package de.westemeyer.version.service;
+package de.westemeyer.version.service.spring;
 
 import de.westemeyer.version.core.api.ArtifactVersionService;
 import de.westemeyer.version.core.collector.AbstractArtifactVersionCollector;
